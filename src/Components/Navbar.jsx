@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useCharContext } from '../Context/Context'
+import { useOdonContext } from '../Context/Context'
 
 
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
-  const {state} = useCharContext()
+  const {state} = useOdonContext()
   return (
     <div>
       <Link to ="/">Home</Link>

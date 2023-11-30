@@ -2,31 +2,31 @@ import { createContext, useContext, useState, useEffect, useReducer } from "reac
 import { reducer } from "../Reducers/reducer";
 import axios from "axios";
 
-const CharContext = createContext();
+const odonContext = createContext();
 const initialState = {
-    list: [],
+    prof: [],
     favs: [],
     theme: false
 }
 const Context = ({children}) => {
     
     const [state, dispach] = useReducer(reducer, initialState)
-    console.log(state)
+    
     const url = "https://jsonplaceholder.typicode.com/users"
 
     useEffect(() => {
         axios(url)
-        .then(res => dispach({type: 'GET_CHARACTERS', payload: res.data}))
+        .then(res => dispach({type: 'GET_ODONTOLOGOS', payload: res.data}))
     }, [])
 
     return (
-        <CharContext.Provider value={{state, dispach}}>
+        <odonContext.Provider value={{state, dispach}}>
             {children}
-        </CharContext.Provider>
+        </odonContext.Provider>
     )
 
 }
 
 export default Context
 
-export const useCharContext = () => useContext(CharContext)
+export const useOdonContext = () => useContext(odonContext)
