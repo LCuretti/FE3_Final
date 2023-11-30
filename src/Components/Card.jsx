@@ -12,7 +12,7 @@ const Card = ({ odontologo }) => {
     <div className="card">
       {/* En cada card deberan mostrar en name - username y el id */}
       <Link to={"/detail/" + odontologo.id}>
-        <img src="../../public/images/doctor.jpg" alt="logo de doctor" style={{ maxWidth: "100%", height: "auto" }}/>
+        <img src="/public/images/doctor.jpg" alt="logo de doctor" style={{ maxWidth: "100%", height: "auto" }}/>
         <h4>{odontologo.name}</h4>
         <h4>{odontologo.username}</h4>
         <h4>{odontologo.id}</h4>
