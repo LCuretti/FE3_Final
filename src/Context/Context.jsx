@@ -10,17 +10,17 @@ const initialState = {
 }
 const Context = ({children}) => {
     
-    const [state, dispach] = useReducer(reducer, initialState)
+    const [state, dispacht] = useReducer(reducer, initialState)
     
     const url = "https://jsonplaceholder.typicode.com/users"
 
     useEffect(() => {
         axios(url)
-        .then(res => dispach({type: 'GET_ODONTOLOGOS', payload: res.data}))
+        .then(res => dispacht({type: 'GET_ODONTOLOGOS', payload: res.data}))
     }, [])
 
     return (
-        <odonContext.Provider value={{state, dispach}}>
+        <odonContext.Provider value={{state, dispacht}}>
             {children}
         </odonContext.Provider>
     )
