@@ -5,7 +5,7 @@ import axios from "axios";
 const odonContext = createContext();
 const initialState = {
     prof: [],
-    favs: [],
+    favs: JSON.parse(localStorage.getItem("favs")) || [],
     theme: false
 }
 const Context = ({children}) => {
@@ -19,6 +19,9 @@ const Context = ({children}) => {
         .then(res => dispacht({type: 'GET_ODONTOLOGOS', payload: res.data}))
     }, [])
 
+    useEffect(() => {
+        localStorage.setItem("favs", JSON.stringify(state.favs))
+    }, [state.favs])
     return (
         <odonContext.Provider value={{state, dispacht}}>
             {children}
