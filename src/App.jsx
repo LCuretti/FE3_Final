@@ -1,5 +1,4 @@
 import "./index.css";
-import "./app.css";
 import { Route, Routes } from "react-router-dom";
 import { useOdonContext } from "./Context/Context";
 import Footer from "./Components/Footer";
