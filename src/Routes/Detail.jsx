@@ -24,14 +24,13 @@ const Detail = () => {
   }, []);
 
   return (
-    <>
+    <div style={{ textAlign: 'center' }}>
       <h1>Detail Dentist id </h1>
-
       <h2>{odon.name}</h2>
       <h2>{odon.email}</h2>
       <h2>{odon.phone}</h2>
       <h2>{odon.website}</h2>
-    </>
+    </div>
   );
 };
 
