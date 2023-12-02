@@ -10,20 +10,20 @@ const initialState = {
 }
 const Context = ({children}) => {
     
-    const [state, dispacht] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, initialState)
     
     const url = "https://jsonplaceholder.typicode.com/users"
 
     useEffect(() => {
         axios(url)
-        .then(res => dispacht({type: 'GET_ODONTOLOGOS', payload: res.data}))
+        .then(res => dispatch({type: 'GET_ODONTOLOGOS', payload: res.data}))
     }, [])
 
     useEffect(() => {
         localStorage.setItem("favs", JSON.stringify(state.favs))
     }, [state.favs])
     return (
-        <odonContext.Provider value={{state, dispacht}}>
+        <odonContext.Provider value={{state, dispatch}}>
             {children}
         </odonContext.Provider>
     )

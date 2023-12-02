@@ -1,16 +1,18 @@
 
 import { Route,Routes } from "react-router-dom";
+import { useOdonContext } from './Context/Context';
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Home from "./Routes/Home";
 import Favs from "./Routes/Favs";
 import Detail from "./Routes/Detail";
 import Contact from "./Routes/Contact";
-
+import './index.css';
 
 function App() {
+  const { state } = useOdonContext();
   return (
-      <>
+      <div className={state.theme ? '' : 'dark'}>
         <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -19,7 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact/>}/>
         </Routes>
         <Footer/>
-      </>
+      </div>
   );
 }
 
