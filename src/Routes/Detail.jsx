@@ -26,6 +26,7 @@ const Detail = () => {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Detail Dentist id </h1>
+      <br/>
       <h2>{odon.name}</h2>
       <h2>{odon.email}</h2>
       <h2>{odon.phone}</h2>
