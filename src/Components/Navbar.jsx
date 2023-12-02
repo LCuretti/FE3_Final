@@ -11,10 +11,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="left-content">
-        <span style={{ color: 'red' }}>D</span>H Odonto
-      </div>
-      <div className="right-content">
+      <p style={{ marginLeft: '150px' }}><span style={{ color: 'red' }}>D</span>H Odonto</p>
+
+      <div>
         <Link to="/">Home</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/favs">Favs</Link>
