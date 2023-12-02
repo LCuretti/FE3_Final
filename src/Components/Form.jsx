@@ -4,7 +4,6 @@ import { useOdonContext } from "../Context/Context";
 
 const Form = () => {
   const { state } = useOdonContext();
-  //Aqui deberan implementar el form completo con sus validaciones
   const [usuario, setUsuario] = useState({
     nombre: "",
     email: "",
@@ -33,13 +32,7 @@ const Form = () => {
     <div>
       {
         <form
-          onSubmit={handleSumbit}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+          onSubmit={handleSumbit}>
           <input
             type="text"
             className={state.theme ? "" : "dark"}

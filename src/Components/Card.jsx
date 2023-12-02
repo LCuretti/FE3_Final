@@ -16,7 +16,6 @@ const Card = ({ odontologo }) => {
   };
   return (
     <div className="card">
-      {/* En cada card deberan mostrar en name - username y el id */}
       <Link to={"/detail/" + odontologo.id}>
         <img
           src="/images/doctor.jpg"
@@ -27,10 +26,10 @@ const Card = ({ odontologo }) => {
         <h4>{odontologo.username}</h4>
         <h4>{odontologo.id}</h4>
       </Link>
-      {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-      {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className={`favButton ${state.theme ? "" : "dark"}`}>
+      <button
+        onClick={addFav}
+        className={`favButton ${state.theme ? "" : "dark"}`}
+      >
         {findFav ? "⭐" : "☆"}
       </button>
     </div>
